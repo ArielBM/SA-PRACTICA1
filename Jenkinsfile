@@ -18,7 +18,7 @@ pipeline {
         stage('run') {
             steps {
                 echo 'Etapa de ejecución'
-                sh 'ng serve'
+                sh 'pm2 start "ng serve"'
             }
         }
     }
