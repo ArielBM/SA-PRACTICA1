@@ -11,7 +11,7 @@ pipeline {
         stage('test') {
             steps {
                 echo 'Etapa de pruebas'
-                sh 'ng test'
+                sh 'ng test --watch=false'
             }
         }
 
