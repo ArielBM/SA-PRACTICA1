@@ -15,10 +15,11 @@ pipeline {
             }
         }
 
-        stage('run') {
+        stage('deploy') {
             steps {
-                echo 'Etapa de ejecución'
-                sh 'pm2 start "ng serve"'
+                echo 'Etapa de despliegue'
+                sh 'sudo ng build --output-path /var/www/html/'
+                sh 'sudo systemctl restart nginx'
             }
         }
     }
